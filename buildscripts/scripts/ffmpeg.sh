@@ -30,8 +30,10 @@ cpuflags=
 	\
 	--disable-gpl \
 	--disable-nonfree \
+	--enable-version3 \
 	--disable-static \
 	--disable-vulkan \
+	--disable-iconv \
 	\
 	--disable-muxers \
 	--disable-decoders \
@@ -41,53 +43,48 @@ cpuflags=
 	--disable-protocols \
 	--disable-devices \
 	--disable-filters \
-	\
-	--disable-stripping \
-	\
 	--disable-doc \
+	--disable-avdevice \
+	--disable-postproc \
 	--disable-programs \
 	--disable-gray \
 	--disable-swscale-alpha \
-	--disable-avdevice \
-	--disable-postproc \
+	\
+	--enable-jni \
+	--enable-bsfs \
+	--disable-stripping \
+	--enable-mediacodec \
+	\
 	--disable-dxva2 \
 	--disable-vaapi \
 	--disable-vdpau \
+	--disable-bzlib \
+	--disable-linux-perf \
 	--disable-videotoolbox \
 	--disable-audiotoolbox \
-	--disable-iconv \
-	--disable-linux-perf \
-	--disable-bzlib \
+	\
 	--disable-bsf=mjpeg2jpeg \
 	--disable-bsf=mjpega_dump_header \
 	--disable-bsf=mov2textsub \
 	--disable-bsf=text2movsub \
 	--disable-bsf=eac3_core \
 	\
-	--enable-jni \
-	--enable-version3 \
-	\
-	--enable-mediacodec \
-	\
-	--enable-mbedtls \
-	--enable-libdav1d \
-	\
-	--enable-bsfs \
 	--enable-small \
 	--enable-shared \
 	--enable-hwaccels \
 	--enable-optimizations \
 	--enable-runtime-cpudetect \
 	\
+	--enable-mbedtls \
+	\
+	--enable-libdav1d \
+	\
 	--enable-avutil \
 	--enable-avcodec \
 	--enable-avfilter \
 	--enable-avformat \
-	\
 	--enable-swscale \
 	--enable-swresample \
-	\
-	--enable-network \
 	\
 	--enable-decoder=flv \
 	--enable-decoder=flv \
@@ -107,19 +104,55 @@ cpuflags=
 	--enable-decoder=av1* \
 	--enable-decoder=libdav1d \
 	\
-	--enable-decoder=aac \
-	--enable-decoder=aac_latm \
-	--enable-decoder=mp3* \
-	--enable-decoder=flac \
+	--enable-decoder=aac* \
+	--enable-decoder=ac3 \
 	--enable-decoder=alac \
-	--enable-decoder=pcm_* \
+	--enable-decoder=als \
+	--enable-decoder=ape \
+	--enable-decoder=atrac* \
+	--enable-decoder=eac3 \
+	--enable-decoder=flac \
+	--enable-decoder=gsm* \
+	--enable-decoder=mp1* \
+	--enable-decoder=mp2* \
+	--enable-decoder=mp3* \
+	--enable-decoder=mpc* \
 	--enable-decoder=opus \
+	--enable-decoder=ra* \
+	--enable-decoder=ralf \
+	--enable-decoder=shorten \
+	--enable-decoder=tak \
+	--enable-decoder=tta \
 	--enable-decoder=vorbis \
+	--enable-decoder=wavpack \
+	--enable-decoder=wma* \
+	--enable-decoder=pcm* \
+	--enable-decoder=dsd* \
 	\
-	--enable-muxer=mpegts \
-	--enable-muxer=mp4 \
+	--enable-decoder=ssa \
+	--enable-decoder=ass \
+	--enable-decoder=dvbsub \
+	--enable-decoder=dvdsub \
+	--enable-decoder=srt \
+	--enable-decoder=stl \
+	--enable-decoder=subrip \
+	--enable-decoder=subviewer \
+	--enable-decoder=subviewer1 \
+	--enable-decoder=text \
+	--enable-decoder=vplayer \
+	--enable-decoder=webvtt \
 	\
-	--enable-demuxer=aac \
+	--enable-decoder=mjpeg \
+	--enable-decoder=ljpeg \
+	--enable-decoder=jpegls \
+	--enable-decoder=jpeg2000 \
+	--enable-decoder=png \
+	--enable-decoder=gif \
+	--enable-decoder=bmp \
+	--enable-decoder=tiff \
+	--enable-decoder=webp \
+	--enable-decoder=jpegls \
+	\
 	--enable-demuxer=concat \
 	--enable-demuxer=data \
 	--enable-demuxer=flv \
@@ -129,7 +162,6 @@ cpuflags=
 	--enable-demuxer=loas \
 	--enable-demuxer=m4v \
 	--enable-demuxer=mov \
-	--enable-demuxer=mp3 \
 	--enable-demuxer=mpegps \
 	--enable-demuxer=mpegts \
 	--enable-demuxer=mpegvideo \
@@ -142,53 +174,84 @@ cpuflags=
 	--enable-demuxer=matroska \
 	--enable-demuxer=dash \
 	--enable-demuxer=webm_dash_manifest \
- 	--enable-demuxer=flac \
-  	--enable-demuxer=wav \
-  	--enable-demuxer=ogg \
-   	\
-    	--enable-demuxer=ass \
-     	--enable-demuxer=srt \
-      	--enable-demuxer=stl \
-      	--enable-demuxer=webvtt \
-	--enable-demuxer=subviewer \
- 	--enable-demuxer=subviewer1 \
-  	--enable-demuxer=vplayer \
-        \
-   	--enable-decoder=ssa \
-     	--enable-decoder=ass \
-      	--enable-decoder=dvbsub \
-	--enable-decoder=dvdsub \
- 	--enable-decoder=srt \
-  	--enable-decoder=stl \
-	--enable-decoder=subrip \
-	--enable-decoder=subviewer \
- 	--enable-decoder=subviewer1 \
-  	--enable-decoder=text \
-   	--enable-decoder=vplayer \
-    	--enable-decoder=webvtt \
 	\
-	--enable-parser=aac \
-	--enable-parser=aac_latm \
+	--enable-demuxer=aac \
+	--enable-demuxer=ac3 \
+	--enable-demuxer=aiff \
+	--enable-demuxer=ape \
+	--enable-demuxer=asf \
+	--enable-demuxer=au \
+	--enable-demuxer=avi \
+	--enable-demuxer=flac \
+	--enable-demuxer=flv \
+	--enable-demuxer=matroska \
+	--enable-demuxer=mov \
+	--enable-demuxer=m4v \
+	--enable-demuxer=mp3 \
+	--enable-demuxer=mpc* \
+	--enable-demuxer=ogg \
+	--enable-demuxer=pcm* \
+	--enable-demuxer=rm \
+	--enable-demuxer=shorten \
+	--enable-demuxer=tak \
+	--enable-demuxer=tta \
+	--enable-demuxer=wav \
+	--enable-demuxer=wv \
+	--enable-demuxer=xwma \
+	--enable-demuxer=dsf \
+	--enable-demuxer=dts \
+	--enable-demuxer=truehd \
+	\
+	--enable-demuxer=ass \
+	--enable-demuxer=srt \
+	--enable-demuxer=stl \
+	--enable-demuxer=webvtt \
+	--enable-demuxer=subviewer \
+	--enable-demuxer=subviewer1 \
+	--enable-demuxer=vplayer \
+	\
 	--enable-parser=h263 \
 	--enable-parser=h264 \
-	--enable-parser=flac \
 	--enable-parser=hevc \
 	--enable-parser=mpeg4 \
 	--enable-parser=mpeg4video \
 	--enable-parser=mpegvideo \
 	\
+	--enable-parser=aac* \
+	--enable-parser=ac3 \
+	--enable-parser=cook \
+	--enable-parser=dca \
+	--enable-parser=flac \
+	--enable-parser=gsm \
+	--enable-parser=mpegaudio \
+	--enable-parser=tak \
+	--enable-parser=vorbis \
+	\
+	--enable-filter=overlay \
 	--enable-filter=equalizer \
 	\
 	--enable-protocol=async \
+	--enable-protocol=cache \
+	--enable-protocol=data \
 	--enable-protocol=ffrtmphttp \
-	--enable-protocol=rtmp \
-	--enable-protocol=rtmpt \
-	--enable-protocol=rtsp \
-	--enable-protocol=rtmp* \
-	--enable-protocol=rtp \
-	--enable-protocol=udp \
-	--enable-protocol=tcp \
+	--enable-protocol=file \
+	--enable-protocol=ftp \
+	--enable-protocol=hls \
+	--enable-protocol=http \
+	--enable-protocol=httpproxy \
+	--enable-protocol=https \
 	--enable-protocol=pipe \
+	--enable-protocol=rtmp \
+	--enable-protocol=rtmps \
+	--enable-protocol=rtmpt \
+	--enable-protocol=rtmpts \
+	--enable-protocol=rtp \
+	--enable-protocol=subfile \
+	--enable-protocol=tcp \
+	--enable-protocol=tls \
+	--enable-protocol=srt \
+	\
+	--enable-network \
 
 make -j$cores
 make DESTDIR="$prefix_dir" install
