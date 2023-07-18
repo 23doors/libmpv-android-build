@@ -87,7 +87,6 @@ cpuflags=
 	--enable-swresample \
 	\
 	--enable-decoder=flv \
-	--enable-decoder=flv \
 	--enable-decoder=h263 \
 	--enable-decoder=h263i \
 	--enable-decoder=h263p \
@@ -103,6 +102,10 @@ cpuflags=
 	--enable-decoder=hevc* \
 	--enable-decoder=av1* \
 	--enable-decoder=libdav1d \
+	--enable-decoder=theora \
+	--enable-decoder=msmpeg* \
+	--enable-decoder=mjpeg \
+	--enable-decoder=wmv* \
 	\
 	--enable-decoder=aac* \
 	--enable-decoder=ac3 \
@@ -141,17 +144,6 @@ cpuflags=
 	--enable-decoder=text \
 	--enable-decoder=vplayer \
 	--enable-decoder=webvtt \
-	\
-	--enable-decoder=mjpeg \
-	--enable-decoder=ljpeg \
-	--enable-decoder=jpegls \
-	--enable-decoder=jpeg2000 \
-	--enable-decoder=png \
-	--enable-decoder=gif \
-	--enable-decoder=bmp \
-	--enable-decoder=tiff \
-	--enable-decoder=webp \
-	--enable-decoder=jpegls \
 	\
 	--enable-demuxer=concat \
 	--enable-demuxer=data \
