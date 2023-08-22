@@ -29,6 +29,7 @@ cpuflags=
 	--extra-cflags="-I$prefix_dir/include $cpuflags" --extra-ldflags="-L$prefix_dir/lib" \
 	\
 	--disable-gpl \
+	--disable-asm \
 	--disable-nonfree \
 	--enable-version3 \
 	--enable-static \
@@ -36,6 +37,7 @@ cpuflags=
 	--disable-vulkan \
 	--disable-iconv \
 	--disable-stripping \
+	--pkg-config-flags=--static \
 	\
 	--disable-muxers \
 	--disable-decoders \
