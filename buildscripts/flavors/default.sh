@@ -29,7 +29,6 @@ cpuflags=
 	--extra-cflags="-I$prefix_dir/include $cpuflags" --extra-ldflags="-L$prefix_dir/lib" \
 	\
 	--disable-gpl \
-	--disable-asm \
 	--disable-nonfree \
 	--enable-version3 \
 	--enable-static \
@@ -65,12 +64,6 @@ cpuflags=
 	--disable-linux-perf \
 	--disable-videotoolbox \
 	--disable-audiotoolbox \
-	\
-	--disable-bsf=mjpeg2jpeg \
-	--disable-bsf=mjpega_dump_header \
-	--disable-bsf=mov2textsub \
-	--disable-bsf=text2movsub \
-	--disable-bsf=eac3_core \
 	\
 	--enable-small \
 	--enable-hwaccels \
@@ -108,7 +101,7 @@ cpuflags=
 	--enable-decoder=libdav1d \
 	--enable-decoder=theora \
 	--enable-decoder=msmpeg* \
-	--enable-decoder=mjpeg \
+	--enable-decoder=mjpeg* \
 	--enable-decoder=wmv* \
 	\
 	--enable-decoder=aac* \
@@ -165,7 +158,7 @@ cpuflags=
 	--enable-demuxer=hevc \
 	--enable-demuxer=rtsp \
 	--enable-demuxer=mpeg4 \
-	--enable-demuxer=mjpeg \
+	--enable-demuxer=mjpeg* \
 	--enable-demuxer=avi \
 	--enable-demuxer=av1 \
 	--enable-demuxer=matroska \
