@@ -18,6 +18,7 @@ v_mpv=v0.37.0
 v_libogg=1.3.5
 v_libvorbis=1.3.7
 v_libvpx=1.13
+v_libplacebo=6.338.2
 
 
 ## Dependency tree
@@ -40,5 +41,5 @@ dep_shaderc=()
 if [ -n "$ENCODERS_GPL" ]; then
 	dep_mpv=(ffmpeg libass fftools_ffi)
 else
-	dep_mpv=(ffmpeg libass)
+	dep_mpv=(ffmpeg libass libplacebo)
 fi

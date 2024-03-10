@@ -42,6 +42,10 @@ mkdir -p deps && cd deps
 # libass
 [ ! -d libass ] && git clone --depth 1 --branch $v_libass https://github.com/libass/libass.git libass
 
+# libplacebo
+[ ! -d libplacebo ] && git clone --depth 1 --branch v$v_libplacebo --single-branch https://github.com/haasn/libplacebo.git libplacebo && cd libplacebo && git submodule update --init --recursive && cd ..
+
+
 # shaderc
 mkdir -p shaderc
 cat >shaderc/README <<'HEREDOC'
