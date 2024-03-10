@@ -2,9 +2,9 @@
 
 ## Dependency versions
 
-v_sdk=9123335_latest
-v_ndk=25.2.9519653
-v_sdk_build_tools=33.0.2
+v_sdk=11076708_latest
+v_ndk=26.2.11394342
+v_sdk_build_tools=34.0.0
 
 v_libass=0.17.1
 v_harfbuzz=8.3.0
@@ -37,9 +37,10 @@ dep_fribidi=()
 dep_harfbuzz=()
 dep_libass=(freetype fribidi harfbuzz)
 dep_lua=()
+dep_libplacebo=()
 dep_shaderc=()
 if [ -n "$ENCODERS_GPL" ]; then
-	dep_mpv=(ffmpeg libass fftools_ffi)
+	dep_mpv=(ffmpeg libass fftools_ffi libplacebo)
 else
 	dep_mpv=(ffmpeg libass libplacebo)
 fi

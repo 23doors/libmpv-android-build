@@ -5,11 +5,11 @@ index fb10e5e..afbc952 100644
 @@ -1707,6 +1707,15 @@ MPV_EXPORT mpv_event *mpv_wait_event(mpv_handle *ctx, double timeout);
   */
  MPV_EXPORT void mpv_wakeup(mpv_handle *ctx);
- 
+
 +/**
 + * Calls av_jni_set_java_vm() with the given JavaVM*.
 + * https://github.com/FFmpeg/FFmpeg/blob/0ba719f726632d73592311615087a0d64aa2fb60/libavcodec/jni.h#L26-L36
-+ * 
++ *
 + * The av_jni_set_java_vm() symbol is not visible when statically linking with libavcodec.
 + * It is important to call this method so that libavcodec can access JNI environment & thus, mediacodec APIs.
 + */
@@ -23,18 +23,18 @@ index 232490d..d7a2842 100644
 --- a/player/client.c
 +++ b/player/client.c
 @@ -22,6 +22,8 @@
- #include <math.h>
  #include <assert.h>
- 
+ #include <errno.h>
+
 +#include <libavcodec/jni.h>
 +
- #include "common/common.h"
- #include "common/global.h"
- #include "common/msg.h"
+ #include <fcntl.h>
+ #include <math.h>
+ #include <stdatomic.h>
 @@ -967,6 +969,10 @@ void mpv_wakeup(mpv_handle *ctx)
-     pthread_mutex_unlock(&ctx->lock);
+     mp_mutex_unlock(&ctx->lock);
  }
- 
+
 +int mpv_lavc_set_java_vm(void *vm) {
 +    return av_jni_set_java_vm(vm, NULL);
 +}
