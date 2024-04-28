@@ -19,6 +19,7 @@ v_libogg=1.3.5
 v_libvorbis=1.3.7
 v_libvpx=1.13
 v_libplacebo=6.338.2
+v_libplacebo=6aa96c72fc0e04cf7da64c6022939b7e2d031cae
 
 
 ## Dependency tree
